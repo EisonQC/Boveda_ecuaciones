@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>La Bóveda de las Ecuaciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="badge">MATEMÁTICA BÁSICA</div>
+  <h1>La Bóveda de las Ecuaciones</h1>
+  <p class="sub">Elige tu nivel de acceso y desactiva los candados resolviendo cada reto.</p>
+
+  <div class="screen show" id="start">
+    <div class="panel" id="namePanel">
+      <p class="sub" style="margin-bottom:10px;">Antes de entrar a la bóveda, identifícate:</p>
+      <div class="row">
+        <input type="text" id="playerName" placeholder="Tu nombre" maxlength="18">
+        <button id="nameOk">Continuar</button>
+      </div>
+      <p class="msg bad" id="nameMsg"></p>
+    </div>
+    <div class="panel" id="diffPanel" style="display:none;"></div>
+    <div style="text-align:center; margin-top:10px;">
+      <button class="link" id="toRecords">🏆 Ver tabla de récords</button>
+    </div>
+  </div>
+
+  <div class="screen" id="game">
+    <div class="hud"><span>⏱ <b id="timer">00:00</b></span><span>PUNTAJE <b id="scoreLive">0</b></span></div>
+    <div class="locks" id="locks"></div>
+    <div class="panel">
+      <div class="level-tag" id="levelTag"></div>
+      <p class="problem" id="problem"></p>
+      <div id="answerArea"></div>
+      <div class="actions-row">
+        <button class="ghost" id="hintBtn">💡 Ver pista</button>
+      </div>
+      <p class="hintbox" id="hintbox"></p>
+      <p class="msg" id="msg"></p>
+      <div class="code-strip" id="codeStrip"></div>
+    </div>
+  </div>
+
+  <div class="screen final" id="final">
+    <div class="panel">
+      <h2 id="finalTitle">🔓 ¡Bóveda desactivada!</h2>
+      <p class="sub" id="finalSub" style="margin-bottom:0;"></p>
+      <div class="stats">
+        <div class="stat"><div class="num" id="finalScore">0</div><div class="lbl">PUNTAJE</div></div>
+        <div class="stat"><div class="num" id="finalTime">00:00</div><div class="lbl">TIEMPO</div></div>
+        <div class="stat"><div class="num" id="finalHints">0</div><div class="lbl">PISTAS</div></div>
+      </div>
+      <p class="sub" style="margin-bottom:4px;">Código de la bóveda:</p>
+      <div class="code-strip" id="finalCode" style="margin-top:0;"></div>
+      <p class="msg ok" id="saveMsg"></p>
+      <div class="actions-row">
+        <button class="ghost" id="backHome">Volver al inicio</button>
+        <button class="ghost" id="goRecords">Ver récords</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="screen" id="records">
+    <div class="panel">
+      <h2 style="font-size:1.4rem; margin:0 0 12px;">🏆 Tabla de récords</h2>
+      <div class="tabs" id="diffTabs"></div>
+      <div id="recordsBody"></div>
+      <button class="ghost" style="margin-top:14px;" id="backHome2">Volver al inicio</button>
+    </div>
+  </div>
+
+  <p class="foot">Páginas @EddiQC con fines educativos. Producto Académico N°3.</p>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
